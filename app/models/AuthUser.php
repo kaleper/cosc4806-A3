@@ -19,10 +19,7 @@ class AuthUser {
     }
 
     public function authenticate($username, $password) {
-        /*
-         * if username and password good then
-         * $this->auth = true;
-         */
+        
 		$username = strtolower($username);
 		$db = db_connect();
         $statement = $db->prepare("select * from users WHERE username = :name;");
@@ -34,16 +31,22 @@ class AuthUser {
 			$_SESSION['auth'] = 1;
 			$_SESSION['username'] = ucwords($username);
 			unset($_SESSION['failedAuth']);
-			header('Location: /home');
-			die;
+
+    return true;
+      // Handle in controller? 
+      //header('Location: /home');
+			//die;
 		} else {
 			if(isset($_SESSION['failedAuth'])) {
 				$_SESSION['failedAuth'] ++; //increment
 			} else {
 				$_SESSION['failedAuth'] = 1;
 			}
-			header('Location: /login');
-			die;
+			
+      return false;
+      // Handle in controller?
+      //header('Location: /login');
+			//die;
 		}
     }
 
