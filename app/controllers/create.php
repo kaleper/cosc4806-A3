@@ -10,9 +10,9 @@ class Create extends Controller {
       $username = $_REQUEST['username'];
       $password = $_REQUEST['password'];
 
-      echo $username;
+      //echo $username;
   
-      $user = $this->model('User');
-      $user->authenticate($username, $password); 
+      $user = $this->model('CreateUser');
+      $user->register($username, $password); 
     }
 }
