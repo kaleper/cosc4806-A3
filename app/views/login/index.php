@@ -22,6 +22,7 @@
 			</div>
             <br>
 		    <button type="submit" class="btn btn-primary">Login</button>
+				<a href="/create">Sign Up</a>
 		</fieldset>
 		</form> 
 	</div>
