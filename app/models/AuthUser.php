@@ -32,6 +32,11 @@ class AuthUser {
 			$_SESSION['username'] = ucwords($username);
 			unset($_SESSION['failedAuth']);
 
+      //Add attempt to database
+      $statement2 = $db->prepare("INSERT INTO login_log(username, successful_attempt, time) VALUES (:name, 1, NOW());");
+      $statement2->bindValue(':name', $username);
+      $statement2 ->execute();
+
     return true;
       // Handle in controller? 
       //header('Location: /home');
@@ -42,6 +47,12 @@ class AuthUser {
 			} else {
 				$_SESSION['failedAuth'] = 1;
 			}
+
+      //Add attempt to database
+      $statement3 = $db->prepare("INSERT INTO login_log(username, successful_attempt, time) VALUES (:name, 0, NOW());");
+
+      $statement3->bindValue(':name', $username);
+      $statement3->execute();
 			
       return false;
       // Handle in controller?
