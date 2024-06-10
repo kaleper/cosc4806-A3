@@ -1,4 +1,14 @@
 <?php require_once 'app/views/templates/headerPublic.php'; ?>
+
+<?php
+// Displays invalid login attempts, if any
+if (isset($_SESSION['failedAuth'])) {
+	echo "<p>
+					Invalid credentials entered. 
+					Number of failed login attempts: " . $_SESSION['failedAuth'] . ". Number of attempts remaining before account locked:" . (3 - $_SESSION['failedAuth']);
+				"</p>";
+	}; 
+?>
 	
 <main role="main" class="container">
     <div class="page-header" id="banner">

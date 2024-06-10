@@ -42,6 +42,12 @@ class AuthUser {
       //header('Location: /home');
 			//die;
 		} else {
+
+      //Lock account if 3 failed login attempts
+      if ($_SESSION['failedAuth'] == 3) {
+        
+      }
+      
 			if(isset($_SESSION['failedAuth'])) {
 				$_SESSION['failedAuth'] ++; //increment
 			} else {
