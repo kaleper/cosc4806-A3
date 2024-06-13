@@ -1,13 +1,22 @@
 <?php require_once 'app/views/templates/headerPublic.php'; ?>
 
 <?php
-// Displays invalid login attempts, if any
-if (isset($_SESSION['failedAuth'])) {
-	echo "<p>
-					Invalid credentials entered. 
-					Number of failed login attempts: " . $_SESSION['failedAuth'] . ". Number of attempts remaining before account locked:" . (3 - $_SESSION['failedAuth']);
-				"</p>";
+
+// Displays invalid login attempts, if any & if failed auths < 3
+if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] < 3) {
+		// Displays below message if failed auths < 3
+		
+			echo "<p>
+							Invalid credentials entered. 
+							Number of failed login attempts: " . $_SESSION['failedAuth'] . ". Number of attempts remaining before account locked:" . (3 - $_SESSION['failedAuth']);
+						"</p>";
+		
 	}; 
+
+	// Displays lockout time, if any
+if ($_SESSION['timeUnlocked'] - time() > 0) {
+	echo "Account locked due to too many failed login attempts. Try again in " . ($_SESSION['timeUnlocked'] - time()) . " seconds.";
+}
 ?>
 	
 <main role="main" class="container">

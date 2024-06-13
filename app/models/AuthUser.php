@@ -43,13 +43,41 @@ class AuthUser {
 			//die;
 		} else {
 
-      //Lock account if 3 failed login attempts
-      if ($_SESSION['failedAuth'] == 3) {
-        
+      if(isset($_SESSION['timeLocked'])) {
+
+         if (time() < $_SESSION['timeUnlocked']) {
+          // Auth ends until unlocked
+          return false;
+         } else {
+           // Unlock account by unsetting session variables
+           unset($_SESSION['timeLocked']);
+           unset($_SESSION['timeUnlocked']);
+           unset($_SESSION['failedAuth']);
+           
+         }
+        }
       }
-      
+
+  
 			if(isset($_SESSION['failedAuth'])) {
-				$_SESSION['failedAuth'] ++; //increment
+        //Lock account if 3 failed login attempts
+        if ($_SESSION['failedAuth'] == 2) {
+
+          // Get starting time that user will be locked out
+          $timeLocked = time();
+
+          // Lockout period is 60s; get the remaining time before unlocked
+          $timeUnlocked = $timeLocked + 60;
+
+          // Track times in session variables
+          $_SESSION['timeLocked'] = $timeLocked;
+          $_SESSION['timeUnlocked'] = $timeUnlocked;
+          $_SESSION['failedAuth'] ++; 
+         
+    
+        } else {
+				  $_SESSION['failedAuth'] ++; //increment
+        }
 			} else {
 				$_SESSION['failedAuth'] = 1;
 			}
@@ -64,7 +92,6 @@ class AuthUser {
       // Handle in controller?
       //header('Location: /login');
 			//die;
-		}
-    }
-
+		
+  }
 }
