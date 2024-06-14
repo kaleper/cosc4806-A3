@@ -67,3 +67,8 @@ a:hover {
   /* remove underline from link */
   
 }
+
+#invalid-attempt, #account-locked {
+  color:#dd6464;
+  text-align: center;
+}

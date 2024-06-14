@@ -4,16 +4,21 @@
 if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] < 3) {
 		// Displays below message if failed auths < 3
 		
-			echo "<p>
-							Invalid credentials entered. 
-							Number of failed login attempts: " . $_SESSION['failedAuth'] . ". Number of attempts remaining before account locked:" . (3 - $_SESSION['failedAuth']);
+			echo "<p id='invalid-attempt'>
+							INVALID CREDENTIALS ENTERED <br>
+							Number of failed login attempts: " . $_SESSION['failedAuth'] . 
+							" <br> Number of attempts remaining before account locked: " . (3 - $_SESSION['failedAuth']);
 						"</p>";
 		
 	}; 
 
 	// Displays lockout time, if any
 if ($_SESSION['timeUnlocked'] - time() > 0) {
-	echo "Account locked due to too many failed login attempts. Try again in " . ($_SESSION['timeUnlocked'] - time()) . " seconds.";
+	echo "<p id= 'account-locked'> 
+					Account locked due to too many failed login attempts. <br>
+					Try again in " . ($_SESSION['timeUnlocked'] - time()) 
+					. " seconds.
+				</p>";
 }
 ?>
 
