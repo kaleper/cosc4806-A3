@@ -71,9 +71,12 @@ class CreateUser {
           // Executes the statement
           $statement->execute();
 
+          $_SESSION['successful_registration'] = "Account created successfully! Please login.";
+
           //Redirect back to login page
           header('location: /login');
           exit;
+          
 		}
   }
 }

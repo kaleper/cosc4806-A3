@@ -1,7 +1,7 @@
 <?php
 
 // Displays invalid login attempts, if any & if failed auths < 3
-if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] < 3) {
+if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] < 3 && isset($_SESSION['failedAuthMsg'])) {
 		// Displays below message if failed auths < 3
 		
 			echo "<p id='invalid-attempt'>
@@ -9,18 +9,32 @@ if (isset($_SESSION['failedAuth']) && $_SESSION['failedAuth'] < 3) {
 							Number of failed login attempts: " . $_SESSION['failedAuth'] . 
 							" <br> Number of attempts remaining before account locked: " . (3 - $_SESSION['failedAuth']);
 						"</p>";
+
+	unset($_SESSION['failedAuthMsg']);
 		
 	}; 
 
 	// Displays lockout time, if any
-if ($_SESSION['timeUnlocked'] - time() > 0) {
+if ($_SESSION['timeUnlocked'] - time() > 0 && isset($_SESSION['lockedMsg'])) {
 	echo "<p id= 'account-locked'> 
 					Account locked due to too many failed login attempts. <br>
 					Try again in " . ($_SESSION['timeUnlocked'] - time()) 
 					. " seconds.
 				</p>";
+
+	unset($_SESSION['lockedMsg']);
 }
+
+	if  (isset($_SESSION['successful_registration'])) {
+				echo "<p id = 'successful-registration'>" . $_SESSION['successful_registration'] . 
+							"</p>";
+							
+				// Unset session variable to only display message once 
+				unset($_SESSION['successful_registration']);
+	}
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
