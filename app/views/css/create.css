@@ -67,3 +67,8 @@ a:hover {
   /* remove underline from link */
 
 }
+
+#invalid-registration {
+  text-align: center;
+  color: #dd6464;
+}

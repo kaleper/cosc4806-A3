@@ -1,10 +1,25 @@
+<?php
+
+// Displays username taken message
+if ($_SESSION['taken_username_message']) {
+     
+
+            echo "<p id='invalid-registration'>" . 
+                  $_SESSION['taken_username_message'] .
+                  "</p>";
+
+    unset($_SESSION['taken_username_message']);
+
+    }; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign Up</title>
-        <link rel="stylesheet" href="/app/views/css/login.css">
+        <link rel="stylesheet" href="/app/views/css/create.css">
 </head>
 
 <main role="main" class="container">
