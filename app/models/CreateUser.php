@@ -1,7 +1,5 @@
 <?php
 
-//TODO: CREATE VERIFICATION MESSAGE OF SUCCESSFUL LOGIN USING URL
-
 class CreateUser {
 
     public $username;
@@ -24,14 +22,7 @@ class CreateUser {
         
 		$username = strtolower($username);
 		$db = db_connect();
-        // **FROM LOGIN**
-        // $statement = $db->prepare("select * from users WHERE username = :name;");
-        // $statement->bindValue(':name', $username);
-        // $statement->execute();
-        // $rows = $statement->fetch(PDO::FETCH_ASSOC);
-
-      // ---------
-
+        
         // Transforms password into non-plain text for security reasons
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -71,6 +62,7 @@ class CreateUser {
           // Executes the statement
           $statement->execute();
 
+          // Set session varviable to be displayed on login view 
           $_SESSION['successful_registration'] = "Account created successfully! Please login.";
 
           //Redirect back to login page

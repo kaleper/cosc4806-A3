@@ -25,6 +25,7 @@ if ($_SESSION['timeUnlocked'] - time() > 0 && isset($_SESSION['lockedMsg'])) {
 	unset($_SESSION['lockedMsg']);
 }
 
+	// Display successful registration message after being redirected from registration page 
 	if  (isset($_SESSION['successful_registration'])) {
 				echo "<p id = 'successful-registration'>" . $_SESSION['successful_registration'] . 
 							"</p>";
@@ -72,10 +73,6 @@ if ($_SESSION['timeUnlocked'] - time() > 0 && isset($_SESSION['lockedMsg'])) {
 		    <button type="submit" class="btn btn-primary">Login</button>
 				<a href="/create">Sign Up</a>
 			</div>
-
-			
-		
-			
 		</fieldset>
 		</form> 
 	</div>

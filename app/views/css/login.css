@@ -14,7 +14,8 @@ form {
   display: flex;
   justify-content: center;
 }
-/* Keeps space between label and text field consistent */ 
+
+/* Keeps space between label and text field consistent with space */ 
 .form-group {
   display:flex;
   justify-content:space-between;
@@ -33,12 +34,14 @@ form {
   background-color: #e8e8e8;
 }
 
+/* Displays buttons on one row with space between */
 form #button-container {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
+/* Rounds out button */
 input, button[type="submit"] {
   border-radius: 5px;
 }
@@ -59,13 +62,13 @@ button:hover, input:hover {
   background-color: #aeb9a7;
 }
 
+/* remove underline from link */
 a {
   text-decoration:none;
 }
+
 a:hover {
    color: #aeb9a7;
-  /* remove underline from link */
-  
 }
 
 #invalid-attempt, #account-locked {

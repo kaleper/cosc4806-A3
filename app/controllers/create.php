@@ -9,8 +9,6 @@ class Create extends Controller {
     public function newAcc(){
       $username = $_REQUEST['username'];
       $password = $_REQUEST['password'];
-
-      //echo $username;
   
       $user = $this->model('CreateUser');
       $user->register($username, $password); 

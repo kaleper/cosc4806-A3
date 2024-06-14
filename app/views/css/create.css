@@ -1,5 +1,5 @@
 * {
-  /* Document background color */
+  /* Document background color and font */
   background-color: #E9E6E2;
   font-family: "Roboto", sans-serif;
 }
@@ -33,6 +33,7 @@ form {
   background-color: #e8e8e8;
 }
 
+/* Displays buttons on one row with space between */
 form #button-container {
   display: flex;
   justify-content: center;
@@ -59,13 +60,12 @@ button:hover, input:hover {
   background-color: #aeb9a7;
 }
 
+ /* remove underline from link */
 a {
   text-decoration:none;
 }
 a:hover {
    color: #aeb9a7;
-  /* remove underline from link */
-
 }
 
 #invalid-registration {
@@ -73,10 +73,10 @@ a:hover {
   color: #dd6464;
 }
 
+/* Max width for the credential requirements */
 #username-requirements, #password-requirements {
   max-width:400px;
 }
-
 
 fieldset {
   display: flex;

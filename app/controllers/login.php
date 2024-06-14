@@ -9,6 +9,7 @@ class Login extends Controller {
     }
     
     public function verify(){
+			// Get credentials from form
 			$username = $_REQUEST['username'];
 			$password = $_REQUEST['password'];
 		
@@ -27,11 +28,5 @@ class Login extends Controller {
 						header('Location: /login');
 						die;
 				}
-
-
-
-			
 			}
-	
-	
 }

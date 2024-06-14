@@ -13,12 +13,13 @@ a:visited {
   color:#535E4B;
 }
 
+/* Remove underline from link */
 a {
   text-decoration:none;
 }
+
 a:hover {
    color: #aeb9a7;
-  /* remove underline from link */
 
 }
 
@@ -27,9 +28,9 @@ a:hover {
   color:#535E4B;
   
 }
+
 #date-label {
   font-weight:bold;
-  
 }
 
 .logout {
