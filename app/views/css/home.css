@@ -1,0 +1,37 @@
+* {
+  /* Document background color */
+  background-color: #E9E6E2;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+ color: #535E4B;
+  text-align: center;
+}
+
+a:visited {
+  color:#535E4B;
+}
+
+a {
+  text-decoration:none;
+}
+a:hover {
+   color: #aeb9a7;
+  /* remove underline from link */
+
+}
+
+#date {
+  text-align:center;
+  color:#535E4B;
+  
+}
+#date-label {
+  font-weight:bold;
+  
+}
+
+.logout {
+  text-align:center;
+}

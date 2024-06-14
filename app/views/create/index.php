@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="/app/views/css/login.css">
+</head>
 
 <main role="main" class="container">
     <div class="page-header" id="banner">
@@ -13,16 +21,18 @@
     <form action="/create/newAcc" method="post" >
     <fieldset>
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="username">Username: </label>
         <input required type="text" class="form-control" name="username">
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password">Password: </label>
         <input required type="password" class="form-control" name="password">
       </div>
             <br>
+    <div id= "button-container">
         <button type="submit" class="btn btn-primary">Create Account</button>
         <a href="/login/index">Login</a>
+    </div>
     </fieldset>
     </form> 
   </div>
