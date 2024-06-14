@@ -61,6 +61,7 @@ if ($_SESSION['timeUnlocked'] - time() > 0 && isset($_SESSION['lockedMsg'])) {
 			<div class="form-group">
 				<label for="username">Username: </label>
 				<input required type="text" class="form-control" name="username">
+	
 			</div>
 			<div class="form-group">
 				<label for="password">Password: </label>
@@ -71,6 +72,10 @@ if ($_SESSION['timeUnlocked'] - time() > 0 && isset($_SESSION['lockedMsg'])) {
 		    <button type="submit" class="btn btn-primary">Login</button>
 				<a href="/create">Sign Up</a>
 			</div>
+
+			
+		
+			
 		</fieldset>
 		</form> 
 	</div>
