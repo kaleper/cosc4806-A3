@@ -1,0 +1,69 @@
+* {
+  /* Document background color */
+  background-color: #E9E6E2;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+ color: #535E4B;
+  text-align: center;
+}
+
+
+form {
+  display: flex;
+  justify-content: center;
+}
+/* Keeps space between label and text field consistent */ 
+.form-group {
+  display:flex;
+  justify-content:space-between;
+  gap: 10px;
+  margin:5px;
+}
+
+
+.form-group label {
+  color:#293720;
+  font-weight:bold; 
+ 
+}
+
+.form-group input {
+  background-color: #e8e8e8;
+}
+
+form #button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+input, button[type="submit"] {
+  border-radius: 5px;
+}
+
+fieldset {
+  border:none;
+}
+
+a:visited {
+  color:#535E4B;
+}
+
+button {
+  background-color: #e8e8e8;
+}
+
+button:hover, input:hover {
+  background-color: #aeb9a7;
+}
+
+a {
+  text-decoration:none;
+}
+a:hover {
+   color: #aeb9a7;
+  /* remove underline from link */
+  
+}

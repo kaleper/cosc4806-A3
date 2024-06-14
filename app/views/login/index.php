@@ -1,5 +1,3 @@
-<?php require_once 'app/views/templates/headerPublic.php'; ?>
-
 <?php
 
 // Displays invalid login attempts, if any & if failed auths < 3
@@ -18,6 +16,15 @@ if ($_SESSION['timeUnlocked'] - time() > 0) {
 	echo "Account locked due to too many failed login attempts. Try again in " . ($_SESSION['timeUnlocked'] - time()) . " seconds.";
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login</title>
+		<link rel="stylesheet" href="/app/views/css/login.css">
+</head>
 	
 <main role="main" class="container">
     <div class="page-header" id="banner">
@@ -33,18 +40,19 @@ if ($_SESSION['timeUnlocked'] - time() > 0) {
 		<form action="/login/verify" method="post" >
 		<fieldset>
 			<div class="form-group">
-				<label for="username">Username</label>
+				<label for="username">Username: </label>
 				<input required type="text" class="form-control" name="username">
 			</div>
 			<div class="form-group">
-				<label for="password">Password</label>
+				<label for="password">Password: </label>
 				<input required type="password" class="form-control" name="password">
 			</div>
             <br>
+			<div id= "button-container">
 		    <button type="submit" class="btn btn-primary">Login</button>
 				<a href="/create">Sign Up</a>
+			</div>
 		</fieldset>
 		</form> 
 	</div>
 </div>
-    <?php require_once 'app/views/templates/footer.php' ?>
